@@ -1,0 +1,175 @@
+@use './css/variables';
+@use 'sass:color';
+@use './css/mixins/mixins';
+
+@font-face {
+    font-family: 'MillionDesign';
+    src: url(./medias/font/million_design/MillionDesign.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Copeland';
+    src: url(./medias/font/copeland/Copeland.otf) format("opentype");
+}
+
+
+* {
+    margin: 0;
+    box-sizing: content-box;
+}
+
+body {
+    background-color: variables.$bg;
+    width: 100%;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .testImg {
+        background-image: url(./medias/img/837028b92264d54e1e177999791b60c0.jpg);
+        background-size: cover;
+        position: absolute;
+        
+        width: 100px;
+        aspect-ratio: 1/1;
+        font-size: 100px;
+        @include mixins.cardMixin;
+        @include mixins.cardBasGauche;
+        @include mixins.ajustTransfromDivHover(-75%, -15%, 0);
+    }
+    .container {
+        height: 250px;
+        /*
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10%;
+        gap: 5px;
+        #testText {
+            background-color: variables.$purpleLight;
+            font-size: 36px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 70px;
+            height: 40px;
+            @include mixins.cardMixin;
+        }
+        button {
+            height: 36px;
+            @include mixins.btnCard;
+        }
+        
+        .btn {
+            &--basDroite {
+                @include mixins.cardBasDroite;
+                /*
+                div.hoverMeOne {
+                    top: 150%;
+                    bottom: auto;
+                    .text {
+                        z-index: 3;
+                    }
+                    svg {
+                        transform: rotate(180deg);
+                        bottom: auto;
+                        top: -15%;
+                    }
+                }*/
+            }
+            &--basGauche {
+                @include mixins.cardBasGauche;
+                /*
+                div.hoverMeOne {
+                    transform: translateX(-80%);
+                    top: 150%;
+                    bottom: auto;
+                    .text {
+                        z-index: 3;
+                        order: 2;
+                    }
+                    .img {
+                        order: 1;
+                        border-radius: 5px 0 0 5px;
+                    }
+                    
+                    svg {
+                        z-index: -1;
+                        transform: rotate(180deg) translateX(-300px);
+                        bottom: auto;
+                        top: -15%;
+                    }
+                }*/
+            }
+            &--topGauche {
+                @include mixins.cardTopGauche;
+                /*
+                div.hoverMeOne {
+                    transform: translateX(-70%);
+                    
+                    //top: 150%;
+                    //bottom: auto;
+                    .text {
+                        z-index: 3;
+                        order: 2;
+                    }
+                    .img {
+                        order: 1;
+                        border-radius: 5px 0 0 5px;
+                    }
+                    
+                    svg {
+                        z-index: -1;
+                        transform: translateX(270px);
+                        //bottom: auto;
+                        //top: -15%;
+                    }
+                }*/
+            }
+            &--basCentre {
+                @include mixins.cardBasCentre;
+                /*
+                div.hoverMeOne {
+                    transform: translateX(-40%);
+                    top: 150%;
+                    bottom: auto;
+                    .text {
+                        z-index: 3;
+                    }
+                    
+                    svg {
+                        z-index: -1;
+                        transform: rotate(180deg) translateX(-130px);
+                        bottom: auto;
+                        top: -15%;
+                    }
+                }*/
+            }
+            &--topCentre {
+                @include mixins.cardTopCentre;
+                /*
+                div.hoverMeOne {
+                    transform: translateX(-35%);
+                    .text {
+                        z-index: 3;
+                    }
+                    
+                    svg {
+                        z-index: -1;
+                        transform: translateX(130px);
+                        //bottom: auto;
+                        //top: -15%;
+                    }
+                }
+                */
+            }
+        }
+    }
+}

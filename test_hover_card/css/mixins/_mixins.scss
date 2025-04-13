@@ -1,0 +1,352 @@
+@use '../variables';
+@use 'sass:color';
+
+
+@mixin cardMixin {
+    position: relative;
+    font-family: 'Copeland';
+    &:hover {
+        .hoverMeOne {
+            pointer-events: all;
+            opacity: 1;
+            svg {
+                pointer-events: all;
+                opacity: 1;
+            }
+        }
+    }
+
+    .hoverMeOne {
+        pointer-events: none;
+        transition: 0.2s;
+        opacity: 0;
+        z-index: 10;
+        position: absolute;
+        width: 400px;
+        height: 250px;
+        background-color: variables.$purpleLighter;
+        bottom: 150%;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        transform: translateY(10%);
+
+        box-shadow: 5px 5px 8px rgba($color: #000000, $alpha: 0.5);
+        .text {
+            color: variables.$purpleDark;
+            width:84%;
+            padding: 8%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: flex-start;
+            height: 100%;
+            text-align: left;
+            h1 {
+                letter-spacing: 1.5px;
+                position: relative;
+                font-size: 36px;
+                line-height: 36px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: variables.$purpleDark;
+                    border-radius: 50%;
+                }
+            }
+            p {
+                text-align: justify;
+                z-index: 3;
+                font-size: 13px;
+            }
+            span {
+                font-size: 20px;
+                font-weight: bold;
+                text-decoration: underline;
+                position: absolute;
+                bottom: 0;
+                align-self: flex-end;
+                justify-content: flex-end;
+                transition: 0.2s;
+                a {
+                    color: variables.$purpleDark;
+                }
+                &:hover {
+                    transform: translateY(-2px);
+                    a {
+                        color: variables.$bg;
+                    }
+                }
+            }
+        }
+        .img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+            background-image: url(./medias/img/1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        svg {
+            path {
+                fill: variables.$purpleLighter;
+            }
+            z-index: 2;
+            
+            position: absolute;
+            bottom: -15%;
+            left: 5%;
+            width: 15%;
+            aspect-ratio: 1/1;
+        }
+    }
+}
+
+@mixin btnCard {
+    position: relative;
+    font-family: 'Copeland';
+    font-weight: bold;
+    padding: 5px 15px;
+    border-radius: 25px;
+    background: variables.$purpleDark;
+    color: variables.$bg;
+    font-size: 20px;
+    border: 1px solid rgba($color: #000000, $alpha: 0);
+    transition: 0.1s;
+    &:hover {
+        color: variables.$purpleDark;
+        background: rgba($color: #000000, $alpha: 0);
+        border: 1px solid variables.$purpleDark;
+        .hoverMeOne {
+            pointer-events: all;
+            opacity: 1;
+            svg {
+                pointer-events: all;
+                opacity: 1;
+            }
+        }
+    }
+    &:active {
+        transform: translateY(2px);
+        box-shadow: inset 2px 2px 3.5px variables.$purpleLight;
+        border: 1px solid variables.$purpleLight;
+        color: variables.$purpleLight;
+    }
+
+    .hoverMeOne {
+        pointer-events: none;
+        transition: 0.2s;
+        opacity: 0;
+        z-index: 10;
+        position: absolute;
+        width: 400px;
+        height: 250px;
+        background-color: variables.$purpleLighter;
+        bottom: 150%;
+        border-radius: 5px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+
+        box-shadow: 5px 5px 8px rgba($color: #000000, $alpha: 0.5);
+        .text {
+            color: variables.$purpleDark;
+            width:84%;
+            padding: 8%;
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: flex-start;
+            height: 100%;
+            text-align: left;
+            h1 {
+                letter-spacing: 1.5px;
+                position: relative;
+                font-size: 36px;
+                line-height: 36px;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    background-color: variables.$purpleDark;
+                    border-radius: 50%;
+                }
+            }
+            p {
+                text-align: justify;
+                z-index: 3;
+                font-size: 13px;
+            }
+            span {
+                font-size: 20px;
+                text-decoration: underline;
+                position: absolute;
+                bottom: 0;
+                align-self: flex-end;
+                justify-content: flex-end;
+                transition: 0.2s;
+                a {
+                    color: variables.$purpleDark;
+                }
+                &:hover {
+                    transform: translateY(-2px);
+                    a {
+                        color: variables.$bg;
+                    }
+                }
+            }
+        }
+        .img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 0 5px 5px 0;
+            background-image: url(./medias/img/1.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        svg {
+            path {
+                fill: variables.$purpleLighter;
+            }
+            z-index: 2;
+            
+            position: absolute;
+            bottom: -15%;
+            left: 5%;
+            width: 15%;
+            aspect-ratio: 1/1;
+        }
+        /*
+        &::after {
+            content: '';
+            transition: 0.15s;
+            z-index: 11;
+            opacity: 0;
+            background-image: url(./medias/svg/Vector\ 3.svg);
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: -15%;
+            left: 5%;
+            width: 15%;
+            aspect-ratio: 1/1;
+        }*/
+    }
+}
+
+
+@mixin cardBasDroite {
+    div.hoverMeOne {
+        top: 150%;
+        bottom: auto;
+        .text {
+            z-index: 3;
+        }
+        svg {
+            transform: rotate(180deg);
+            bottom: auto;
+            top: -15%;
+        }
+    }
+}
+
+@mixin cardBasGauche {
+    div.hoverMeOne {
+        transform: translateX(-80%);
+        top: 150%;
+        bottom: auto;
+        .text {
+            z-index: 3;
+            order: 2;
+        }
+        .img {
+            order: 1;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        svg {
+            z-index: -1;
+            transform: rotate(180deg) translateX(-300px);
+            bottom: auto;
+            top: -15%;
+        }
+    }
+}
+
+@mixin cardTopGauche {
+    div.hoverMeOne {
+        transform: translateX(-70%);
+        /*
+        top: 150%;
+        bottom: auto;*/
+        .text {
+            z-index: 3;
+            order: 2;
+        }
+        .img {
+            order: 1;
+            border-radius: 5px 0 0 5px;
+        }
+        
+        svg {
+            z-index: -1;
+            transform: translateX(270px);
+            /*bottom: auto;
+            top: -15%;*/
+        }
+    }
+}
+
+@mixin cardBasCentre {
+    div.hoverMeOne {
+        transform: translateX(-40%);
+        top: 150%;
+        bottom: auto;
+        .text {
+            z-index: 3;
+        }
+        
+        svg {
+            z-index: -1;
+            transform: rotate(180deg) translateX(-130px);
+            bottom: auto;
+            top: -15%;
+        }
+    }
+}
+
+@mixin cardTopCentre {
+    div.hoverMeOne {
+        transform: translateX(-35%);
+        .text {
+            z-index: 3;
+        }
+        
+        svg {
+            z-index: -1;
+            transform: translateX(130px);
+            /*bottom: auto;
+            top: -15%;*/
+        }
+    }
+}
+
+@mixin ajustTransfromDivHover($xAdd, $yAdd, $opacityValue) {
+    div.hoverMeOne {
+        opacity: $opacityValue;
+        transform: translateX($xAdd) translateY($yAdd);
+    }
+}

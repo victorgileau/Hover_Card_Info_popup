@@ -1,0 +1,598 @@
+/*original colors
+$bg: rgba($color: #1a0927, $alpha: 1.0);
+$bgHalf: rgba($color: #24053b, $alpha: 0.5);
+$purpleDark: rgba($color: #8730c9, $alpha: 1.0);
+$purpleLight: rgba($color: #c47efa, $alpha: 1.0);
+$purpleLighter: rgba($color: #e5c9fa, $alpha: 1.0);
+*/
+/*Blue*/
+/*Red
+$bg: rgba($color: #270909, $alpha: 1.0);
+$bgHalf: rgba($color: #3b0505, $alpha: 0.5);
+$purpleDark: rgba($color: #c93030, $alpha: 1.0);
+$purpleLight: rgba($color: #fa7e7e, $alpha: 1.0);
+$purpleLighter: rgba($color: #fac9c9, $alpha: 1.0);
+*/
+@font-face {
+  font-family: "MillionDesign";
+  src: url(./medias/font/million_design/MillionDesign.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Copeland";
+  src: url(./medias/font/copeland/Copeland.otf) format("opentype");
+}
+* {
+  margin: 0;
+  box-sizing: content-box;
+}
+
+body {
+  background-color: #0a0927;
+  width: 100%;
+}
+
+main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .testImg {
+  background-image: url(./medias/img/837028b92264d54e1e177999791b60c0.jpg);
+  background-size: cover;
+  position: absolute;
+  width: 100px;
+  aspect-ratio: 1/1;
+  font-size: 100px;
+  position: relative;
+  font-family: "Copeland";
+}
+main .testImg:hover .hoverMeOne {
+  pointer-events: all;
+  opacity: 1;
+}
+main .testImg:hover .hoverMeOne svg {
+  pointer-events: all;
+  opacity: 1;
+}
+main .testImg .hoverMeOne {
+  pointer-events: none;
+  transition: 0.2s;
+  opacity: 0;
+  z-index: 10;
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  background-color: #c9cefa;
+  bottom: 150%;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  transform: translateY(10%);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+}
+main .testImg .hoverMeOne .text {
+  color: #3330c9;
+  width: 84%;
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  height: 100%;
+  text-align: left;
+}
+main .testImg .hoverMeOne .text h1 {
+  letter-spacing: 1.5px;
+  position: relative;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+main .testImg .hoverMeOne .text h1::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #3330c9;
+  border-radius: 50%;
+}
+main .testImg .hoverMeOne .text p {
+  text-align: justify;
+  z-index: 3;
+  font-size: 13px;
+}
+main .testImg .hoverMeOne .text span {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 0;
+  align-self: flex-end;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+main .testImg .hoverMeOne .text span a {
+  color: #3330c9;
+}
+main .testImg .hoverMeOne .text span:hover {
+  transform: translateY(-2px);
+}
+main .testImg .hoverMeOne .text span:hover a {
+  color: #0a0927;
+}
+main .testImg .hoverMeOne .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+  background-image: url(./medias/img/1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+main .testImg .hoverMeOne svg {
+  z-index: 2;
+  position: absolute;
+  bottom: -15%;
+  left: 5%;
+  width: 15%;
+  aspect-ratio: 1/1;
+}
+main .testImg .hoverMeOne svg path {
+  fill: #c9cefa;
+}
+main .testImg div.hoverMeOne {
+  transform: translateX(-80%);
+  top: 150%;
+  bottom: auto;
+}
+main .testImg div.hoverMeOne .text {
+  z-index: 3;
+  order: 2;
+}
+main .testImg div.hoverMeOne .img {
+  order: 1;
+  border-radius: 5px 0 0 5px;
+}
+main .testImg div.hoverMeOne svg {
+  z-index: -1;
+  transform: rotate(180deg) translateX(-300px);
+  bottom: auto;
+  top: -15%;
+}
+main .testImg div.hoverMeOne {
+  opacity: 0;
+  transform: translateX(-75%) translateY(-15%);
+}
+main .container {
+  height: 250px;
+  /*
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10%;
+  gap: 5px;
+}
+main .container #testText {
+  background-color: #867efa;
+  font-size: 36px;
+  padding: 10px;
+  border-radius: 5px;
+  width: 70px;
+  height: 40px;
+  position: relative;
+  font-family: "Copeland";
+}
+main .container #testText:hover .hoverMeOne {
+  pointer-events: all;
+  opacity: 1;
+}
+main .container #testText:hover .hoverMeOne svg {
+  pointer-events: all;
+  opacity: 1;
+}
+main .container #testText .hoverMeOne {
+  pointer-events: none;
+  transition: 0.2s;
+  opacity: 0;
+  z-index: 10;
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  background-color: #c9cefa;
+  bottom: 150%;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  transform: translateY(10%);
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+}
+main .container #testText .hoverMeOne .text {
+  color: #3330c9;
+  width: 84%;
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  height: 100%;
+  text-align: left;
+}
+main .container #testText .hoverMeOne .text h1 {
+  letter-spacing: 1.5px;
+  position: relative;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+main .container #testText .hoverMeOne .text h1::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #3330c9;
+  border-radius: 50%;
+}
+main .container #testText .hoverMeOne .text p {
+  text-align: justify;
+  z-index: 3;
+  font-size: 13px;
+}
+main .container #testText .hoverMeOne .text span {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 0;
+  align-self: flex-end;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+main .container #testText .hoverMeOne .text span a {
+  color: #3330c9;
+}
+main .container #testText .hoverMeOne .text span:hover {
+  transform: translateY(-2px);
+}
+main .container #testText .hoverMeOne .text span:hover a {
+  color: #0a0927;
+}
+main .container #testText .hoverMeOne .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+  background-image: url(./medias/img/1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+main .container #testText .hoverMeOne svg {
+  z-index: 2;
+  position: absolute;
+  bottom: -15%;
+  left: 5%;
+  width: 15%;
+  aspect-ratio: 1/1;
+}
+main .container #testText .hoverMeOne svg path {
+  fill: #c9cefa;
+}
+main .container button {
+  height: 36px;
+  position: relative;
+  font-family: "Copeland";
+  font-weight: bold;
+  padding: 5px 15px;
+  border-radius: 25px;
+  background: #3330c9;
+  color: #0a0927;
+  font-size: 20px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: 0.1s;
+}
+main .container button:hover {
+  color: #3330c9;
+  background: rgba(0, 0, 0, 0);
+  border: 1px solid #3330c9;
+}
+main .container button:hover .hoverMeOne {
+  pointer-events: all;
+  opacity: 1;
+}
+main .container button:hover .hoverMeOne svg {
+  pointer-events: all;
+  opacity: 1;
+}
+main .container button:active {
+  transform: translateY(2px);
+  box-shadow: inset 2px 2px 3.5px #867efa;
+  border: 1px solid #867efa;
+  color: #867efa;
+}
+main .container button .hoverMeOne {
+  pointer-events: none;
+  transition: 0.2s;
+  opacity: 0;
+  z-index: 10;
+  position: absolute;
+  width: 400px;
+  height: 250px;
+  background-color: #c9cefa;
+  bottom: 150%;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+  /*
+  &::after {
+      content: '';
+      transition: 0.15s;
+      z-index: 11;
+      opacity: 0;
+      background-image: url(./medias/svg/Vector\ 3.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      bottom: -15%;
+      left: 5%;
+      width: 15%;
+      aspect-ratio: 1/1;
+  }*/
+}
+main .container button .hoverMeOne .text {
+  color: #3330c9;
+  width: 84%;
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  height: 100%;
+  text-align: left;
+}
+main .container button .hoverMeOne .text h1 {
+  letter-spacing: 1.5px;
+  position: relative;
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+main .container button .hoverMeOne .text h1::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #3330c9;
+  border-radius: 50%;
+}
+main .container button .hoverMeOne .text p {
+  text-align: justify;
+  z-index: 3;
+  font-size: 13px;
+}
+main .container button .hoverMeOne .text span {
+  font-size: 20px;
+  text-decoration: underline;
+  position: absolute;
+  bottom: 0;
+  align-self: flex-end;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+main .container button .hoverMeOne .text span a {
+  color: #3330c9;
+}
+main .container button .hoverMeOne .text span:hover {
+  transform: translateY(-2px);
+}
+main .container button .hoverMeOne .text span:hover a {
+  color: #0a0927;
+}
+main .container button .hoverMeOne .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 5px 5px 0;
+  background-image: url(./medias/img/1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+main .container button .hoverMeOne svg {
+  z-index: 2;
+  position: absolute;
+  bottom: -15%;
+  left: 5%;
+  width: 15%;
+  aspect-ratio: 1/1;
+}
+main .container button .hoverMeOne svg path {
+  fill: #c9cefa;
+}
+main .container .btn--basDroite {
+  /*
+  div.hoverMeOne {
+      top: 150%;
+      bottom: auto;
+      .text {
+          z-index: 3;
+      }
+      svg {
+          transform: rotate(180deg);
+          bottom: auto;
+          top: -15%;
+      }
+  }*/
+}
+main .container .btn--basDroite div.hoverMeOne {
+  top: 150%;
+  bottom: auto;
+}
+main .container .btn--basDroite div.hoverMeOne .text {
+  z-index: 3;
+}
+main .container .btn--basDroite div.hoverMeOne svg {
+  transform: rotate(180deg);
+  bottom: auto;
+  top: -15%;
+}
+main .container .btn--basGauche {
+  /*
+  div.hoverMeOne {
+      transform: translateX(-80%);
+      top: 150%;
+      bottom: auto;
+      .text {
+          z-index: 3;
+          order: 2;
+      }
+      .img {
+          order: 1;
+          border-radius: 5px 0 0 5px;
+      }
+
+      svg {
+          z-index: -1;
+          transform: rotate(180deg) translateX(-300px);
+          bottom: auto;
+          top: -15%;
+      }
+  }*/
+}
+main .container .btn--basGauche div.hoverMeOne {
+  transform: translateX(-80%);
+  top: 150%;
+  bottom: auto;
+}
+main .container .btn--basGauche div.hoverMeOne .text {
+  z-index: 3;
+  order: 2;
+}
+main .container .btn--basGauche div.hoverMeOne .img {
+  order: 1;
+  border-radius: 5px 0 0 5px;
+}
+main .container .btn--basGauche div.hoverMeOne svg {
+  z-index: -1;
+  transform: rotate(180deg) translateX(-300px);
+  bottom: auto;
+  top: -15%;
+}
+main .container .btn--topGauche {
+  /*
+  div.hoverMeOne {
+      transform: translateX(-70%);
+
+      //top: 150%;
+      //bottom: auto;
+      .text {
+          z-index: 3;
+          order: 2;
+      }
+      .img {
+          order: 1;
+          border-radius: 5px 0 0 5px;
+      }
+
+      svg {
+          z-index: -1;
+          transform: translateX(270px);
+          //bottom: auto;
+          //top: -15%;
+      }
+  }*/
+}
+main .container .btn--topGauche div.hoverMeOne {
+  transform: translateX(-70%);
+  /*
+  top: 150%;
+  bottom: auto;*/
+}
+main .container .btn--topGauche div.hoverMeOne .text {
+  z-index: 3;
+  order: 2;
+}
+main .container .btn--topGauche div.hoverMeOne .img {
+  order: 1;
+  border-radius: 5px 0 0 5px;
+}
+main .container .btn--topGauche div.hoverMeOne svg {
+  z-index: -1;
+  transform: translateX(270px);
+  /*bottom: auto;
+  top: -15%;*/
+}
+main .container .btn--basCentre {
+  /*
+  div.hoverMeOne {
+      transform: translateX(-40%);
+      top: 150%;
+      bottom: auto;
+      .text {
+          z-index: 3;
+      }
+
+      svg {
+          z-index: -1;
+          transform: rotate(180deg) translateX(-130px);
+          bottom: auto;
+          top: -15%;
+      }
+  }*/
+}
+main .container .btn--basCentre div.hoverMeOne {
+  transform: translateX(-40%);
+  top: 150%;
+  bottom: auto;
+}
+main .container .btn--basCentre div.hoverMeOne .text {
+  z-index: 3;
+}
+main .container .btn--basCentre div.hoverMeOne svg {
+  z-index: -1;
+  transform: rotate(180deg) translateX(-130px);
+  bottom: auto;
+  top: -15%;
+}
+main .container .btn--topCentre {
+  /*
+  div.hoverMeOne {
+      transform: translateX(-35%);
+      .text {
+          z-index: 3;
+      }
+
+      svg {
+          z-index: -1;
+          transform: translateX(130px);
+          //bottom: auto;
+          //top: -15%;
+      }
+  }
+  */
+}
+main .container .btn--topCentre div.hoverMeOne {
+  transform: translateX(-35%);
+}
+main .container .btn--topCentre div.hoverMeOne .text {
+  z-index: 3;
+}
+main .container .btn--topCentre div.hoverMeOne svg {
+  z-index: -1;
+  transform: translateX(130px);
+  /*bottom: auto;
+  top: -15%;*/
+}/*# sourceMappingURL=style.css.map */
